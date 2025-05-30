@@ -23,8 +23,7 @@ Model dilatih menggunakan data harga penutupan dan divalidasi menggunakan metrik
 
 # === [LOAD DATA & MODEL] ===
 df = load_and_clean_data('data/bbca_stock_2019-2025.csv')
-model = load_model("notebooks/model/lstm_model.keras")
-
+model = load_model("model/lstm_model.h5", compile=False)
 scaler = MinMaxScaler()
 scaled_close = scaler.fit_transform(df[['Close']].values)
 
