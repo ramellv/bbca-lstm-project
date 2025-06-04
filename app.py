@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from utils.preprocessing import load_and_clean_data
@@ -23,7 +23,7 @@ Model dilatih menggunakan data harga penutupan dan divalidasi menggunakan metrik
 
 # === [LOAD DATA & MODEL] ===
 df = load_and_clean_data('data/bbca_stock_2019-2025.csv')
-model = load_model("model/lstm_model.h5", compile=False)
+model = load_model("model/lstm_model.h5")
 scaler = MinMaxScaler()
 scaled_close = scaler.fit_transform(df[['Close']].values)
 
